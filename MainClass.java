@@ -77,6 +77,12 @@ public class MainClass {
                             buscarProduto();
                             break;
                         case 3:
+                            if(Dados.produtos.isEmpty()){
+                                System.out.println("****************************************************************");
+                                System.out.println("Não foi possível editar pois não existem produtos cadastrados");
+                                System.out.println("****************************************************************");
+                                break;
+                            }
                             editarProduto();
                             break;
                         case 4:
@@ -317,7 +323,8 @@ public class MainClass {
 
         if (Dados.produtos.isEmpty()) {
             System.out.println("###################################################################################################################################################");
-            System.out.println("Atenção! Não foi possível cadastrar o novo mercado, pois não há produtos para enviar. Precisamos de produtos para enviar à nova filial. ");
+            System.out.println("Atenção! Não foi possível cadastrar o novo mercado, pois não há produtos para enviar. É necessário haver produtos previamente cadastrados na distribuidora. ");
+            System.out.println("Finalize as opções de mercado, volte ao menu e cadastre produtos na distribuidora");
             System.out.println("###################################################################################################################################################");
             return;
         }
